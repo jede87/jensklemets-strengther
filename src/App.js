@@ -6,8 +6,16 @@ import configureStore from './store/configureStore';
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
 import StartPage from './components/start/StartPage';
+import AddMovementPage from './components/movements/AddMovementPage';
+import EditMovementPage from './components/movements/EditMovementPage';
+import ListMovementsPage from './components/movements/ListMovementsPage';
 
-const store = configureStore({});
+import { loadMovements } from './actions/movementActions';
+import { loadExerciseTypes } from './actions/exerciseTypeActions';
+
+const store = configureStore();
+store.dispatch(loadMovements());
+store.dispatch(loadExerciseTypes());
 
 class App extends Component {
 	render() {
@@ -18,6 +26,21 @@ class App extends Component {
 						<Header />
 						<Switch>
 							<Route exact path="/" component={StartPage} />
+							<Route
+								exact
+								path="/movements/add"
+								component={AddMovementPage}
+							/>
+							<Route
+								exact
+								path="/movements/edit/:id"
+								component={EditMovementPage}
+							/>
+							<Route
+								exact
+								path="/movements/list"
+								component={ListMovementsPage}
+							/>
 						</Switch>
 						<Footer />
 					</React.Fragment>

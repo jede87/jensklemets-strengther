@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
+// import PropTypes from 'prop-types';
 
-import * as movementActions from '../../actions/movementActions';
+import Grid from '@material-ui/core/Grid';
 
 class StartPage extends Component {
 	// constructor(props) {
@@ -13,28 +11,17 @@ class StartPage extends Component {
 	render() {
 		return (
 			<React.Fragment>
-				{this.props.movements.map(movement => (
-					<p>{movement.title}</p>
-				))}
+				<Grid container>
+					<Grid item>
+						<h2>HOME</h2>
+						<p>My Material Grid container</p>
+					</Grid>
+				</Grid>
 			</React.Fragment>
 		);
 	}
 }
-StartPage.propTypes = {
-	movements: PropTypes.array.isRequired
-};
-function mapStateToProps(state, ownProps) {
-	debugger;
-	return {
-		movements: state.movements
-	};
-}
-function mapDispatchToProps(dispatch) {
-	return {
-		actions: bindActionCreators(movementActions, dispatch)
-	};
-}
-export default connect(
-	mapStateToProps,
-	mapDispatchToProps
-)(StartPage);
+// StartPage.propTypes = {
+// };
+
+export default StartPage;

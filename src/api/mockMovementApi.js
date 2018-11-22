@@ -5,9 +5,19 @@ import uuid from 'uuid';
 // All calls return promises.
 const movements = [
 	{
-		id: uuid(),
+		id: 1,
 		title: 'Squats',
-		muscleGroups: ['legs']
+		exerciseTypes: [{ id: 1, title: 'legs' }]
+	},
+	{
+		id: 2,
+		title: 'Shoulder Press',
+		exerciseTypes: [{ id: 2, title: 'arms' }]
+	},
+	{
+		id: 3,
+		title: 'Bench Press',
+		exerciseTypes: [{ id: 2, title: 'arms' }]
 	}
 ];
 

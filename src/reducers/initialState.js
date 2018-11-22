@@ -1,7 +1,4 @@
 export default {
-	movements: [
-		{
-			title: 'test'
-		}
-	]
+	movements: [],
+	exerciseTypes: []
 };
